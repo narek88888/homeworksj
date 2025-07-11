@@ -145,6 +145,18 @@ public class Operators {
 
         //9․ Փորձեք 8-րդ խնդիրը լուծել առանց երրորդ փոփոխական օգտագործելու։
 
+        int t1 = 10;
+        int t2 = 5;
+        System.out.println(t1);
+        System.out.println(t2);
+
+        t1 = t1 + t2; //15
+        t2 = t1 - t2; // 10
+        t1 = t1 - t2;
+
+        System.out.println(t1);
+        System.out.println(t2);
+
 
         //10․ Գրել ծրագիր, որը հաշվում է  1-100 թվերի գումարը։ (ցիկլ չoգտագործել)
 
@@ -193,8 +205,16 @@ public class Operators {
         System.out.println();
         System.out.println(bitewise_XOR(numberb,numberb));
 
+        //1․ Տպել console -ում  հետևյալը․
+        //10 << 2
+        //-10 << 3
+        //20 >> 2
+        //15 >> 3
 
-
+        System.out.println(left_shift(10,2));
+        System.out.println(left_shift(-10,3));
+        System.out.println(right_shift(20,2));
+        System.out.println(right_shift(15,3));
 
     }
 
@@ -569,7 +589,7 @@ public class Operators {
     //b^b
 
     /**
-     * bitewise AND
+     * this method does bitewise AND
      * @param number1
      * @param number2
      * @return
@@ -581,10 +601,10 @@ public class Operators {
     }
 
     /**
-     * bitewise XOR
+     * this method does bitewise XOR
      * @param number1
      * @param number2
-     * @return
+     * @return bitewise XOR
      */
 
     public static int bitewise_XOR(int number1, int number2){
@@ -592,10 +612,10 @@ public class Operators {
     }
 
     /**
-     *
+     * this method does bitewise OR
      * @param number1
      * @param number2
-     * @return bitewise OR
+     * @return
      */
 
     public static int bitewise_OR(int number1, int number2){
@@ -603,9 +623,9 @@ public class Operators {
     }
 
     /**
-     *
+     * this method dpes bitewise NOT
      * @param number1
-     * @return bitewise NOT
+     * @return
      */
 
     public static int bitewise_NOT(int number1){
@@ -624,9 +644,27 @@ public class Operators {
             //20 >> 2
             //15 >> 3
 
+    /**
+     * this method does bitewise left shift
+     * @param num1
+     * @param num2
+     * @return
+     */
 
+    public static int left_shift(int num1, int num2){
+        return num1 << num2;
+    }
 
+    /**
+     * this method does bitwise right shift
+     * @param num1
+     * @param num2
+     * @return
+     */
 
+    public static int right_shift(int num1,int num2){
+        return num1 >> num2;
+    }
 
 
 
