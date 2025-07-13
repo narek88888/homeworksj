@@ -1,4 +1,4 @@
-package Homework6;
+package Homework5;
 
 public class Operators {
 
@@ -202,7 +202,7 @@ public class Operators {
         System.out.println(bitewise_NOT(numbera));
         System.out.println(true || (numbera < 4));
         System.out.println((numberb > 6) || (++numbera <= 7) );
-        System.out.println();
+        System.out.println((numbera < numberb)?numbera:numberb);
         System.out.println(bitewise_XOR(numberb,numberb));
 
         //1․ Տպել console -ում  հետևյալը․
@@ -215,6 +215,9 @@ public class Operators {
         System.out.println(left_shift(-10,3));
         System.out.println(right_shift(20,2));
         System.out.println(right_shift(15,3));
+
+
+
 
     }
 
@@ -633,6 +636,8 @@ public class Operators {
     }
 
     // մնացածը գրել եմ main մեթոդում
+
+
 
 
 
