@@ -216,6 +216,15 @@ public class Operators {
         System.out.println(right_shift(20,2));
         System.out.println(right_shift(15,3));
 
+        //2․ Տրված փոփոխականը բազմապատկեք 8-ով և 16-ով առանց օգտագործելու *-նշանը։
+
+        int num1 = 4;
+        int multiplied1 = 4 << 3;
+        int multiplied2 = 4 << 4;
+
+        System.out.println(multiplied1);
+        System.out.println(multiplied2);
+
 
 
 
@@ -671,6 +680,9 @@ public class Operators {
         return num1 >> num2;
     }
 
+    //2․ Տրված փոփոխականը բազմապատկեք 8-ով և 16-ով առանց օգտագործելու *-նշանը։
+
+    //it is written in main method
 
 
 
