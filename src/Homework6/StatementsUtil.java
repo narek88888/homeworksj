@@ -1,5 +1,7 @@
 package  Homework6;
 
+import java.math.BigInteger;
+
 public class StatementsUtil {
 
     public static void main(String[] args) {
@@ -24,9 +26,9 @@ public class StatementsUtil {
         check_coordinates(0, 5);
         check_coordinates(10, 15);
 
-        find_the_largest(6, 10, 1);
+        find_the_largest(10,5, 1);
 
-        check_leap_year(1900);
+        check_leap_year(2024);
 
         //(9)11.Գրել method, որը console -ում  տպում է  1 ից  200 թվերը
 
@@ -54,134 +56,143 @@ public class StatementsUtil {
 
         count_sum(15);
 
-        //16. Գրել method, որը հաշվում է [1-N]  բոլոր  երկնիշ զույգ թվերի արտադրյալը։
+        even_multiplied(98);
 
-        int multiplied = 1;
-        for (int t = 1; t <= 99; t++) {
-            if (t % 2 == 0) {
-                multiplied = multiplied * t;
-            }
+        min_max(12);
+        digit_sum1(11111);
+
+
+    }
+
+
+    //1․ Գրել method, որը ստուգում է տրված x ամբողջ  թիվը զույգ է թե կենտ.
+    public static void check_odd_or_even(int num1) {
+        if (num1 % 2 == 0) {
+            System.out.println("it is odd number");
+        } else {
+            System.out.println("it is even");
         }
-        System.out.println(multiplied);
-
-        min_max(20);
-
-        digit_sum1(5123);
 
     }
 
+    //2. Գրել method, որը ստուգում է տրված  x ամբողջ  թիվը դրական է թե բացասական.
+    public static void check_positive_negative(int num1) {
+        if (num1 < 0) {
 
+            System.out.println("it is negative");
 
-//1․ Գրել method, որը ստուգում է տրված x ամբողջ  թիվը զույգ է թե կենտ.
-public static void check_odd_or_even(int num1) {
-    if (num1 % 2 == 0) {
-        System.out.println("it is odd number");
-    } else {
-        System.out.println("it is even");
+        } else if (num1 > 0) {
+
+            System.out.println("it is positive");
+        } else {
+            System.out.println("it is neither positive nor negative");
+        }
+
     }
-
-}
-
-//2. Գրել method, որը ստուգում է տրված  x ամբողջ  թիվը դրական է թե բացասական.
-public static void check_positive_negative(int num1) {
-    if (num1 < 0) {
-
-        System.out.println("it is negative");
-
-    } else if (num1 > 0) {
-
-        System.out.println("it is positive");
-    } else {
-        System.out.println("it is neither positive nor negative");
-    }
-
-}
 
 //3․ Գրել method, որը ստուգում է տրված x ամբողջ  թիվը  ՝ կամ փոքր 8 ից  և մեծ 5 ից
 //    Կամ փոքր  20 ից և մեծ 15 ից ․
 
-public static void check_greater_than_or_less_than(int x) {
-    if (x > 5 && x < 8) {
-        System.out.println("it is greater than 5 and less than 8");
-    } else if (x > 15 && x < 20) {
-        System.out.println("it is greater than 15 and less than 20 ");
+    public static void check_greater_than_or_less_than(int x) {
+        if (x > 5 && x < 8) {
+            System.out.println("it is greater than 5 and less than 8");
+        } else if (x > 15 && x < 20) {
+            System.out.println("it is greater than 15 and less than 20 ");
 
-    } else {
-        System.out.println("you have given a number that doesn't suit the range");
+        } else {
+            System.out.println("you have given a number that doesn't suit the range");
+        }
     }
-}
 
 //4.Գրել method, որը ստուգում է տրվածղ ամբողջ թիվը կարող է բաժանվել 5-ի և 7-ի վրա առանց մնացորդի.
 
-public static void check_five_and_seven_multiple(int num1) {
-    if (num1 % 5 == 0) {
-        System.out.println("it is five's multiple");
-    } else if (num1 % 7 == 0) {
-        System.out.println("it is seven's multiple");
+    public static void check_five_and_seven_multiple(int num1) {
+        if (num1 % 5 == 0) {
+            System.out.println("it is five's multiple");
+        } else if (num1 % 7 == 0) {
+            System.out.println("it is seven's multiple");
 
-    } else {
-        System.out.println("it is neither five's nor seven's multiple");
+        } else {
+            System.out.println("it is neither five's nor seven's multiple");
+        }
     }
-}
 
 //5․ Գրել method, որը ստուգում է տրված եռանիշ թվի երկրորդ թվանշանը 7 է թե ոչ։
 
-public static void check_seven(int num1) {
-    if ((num1 / 10) % 10 == 7) {
-        System.out.println("the second number is 7");
-    } else {
-        System.out.println("the second number isn't 7");
+    public static void check_seven(int num1) {
+        if ((num1 / 10) % 10 == 7) {
+            System.out.println("the second number is 7");
+        } else {
+            System.out.println("the second number isn't 7");
+        }
     }
-}
 
 //6․ Գրել method, որը ստուգում է (x,y) կորդինատներով
 // կետը գտնվում է արդյոք K(0,5) շրջանի մեջ թե ոչ։
 
-public static void check_coordinates(int x, int y) {
-    if (x * x + y * y <= 25 && x * x + y * y >= -25) {
-        System.out.println("True");
-    } else {
-        System.out.println("False");
+    public static void check_coordinates(int x, int y) {
+        if (x * x + y * y <= 25 && x * x + y * y >= -25) {
+            System.out.println("True");
+        } else {
+            System.out.println("False");
+        }
     }
-}
 
 //7. Գրել method, որը գտնում է տրված 3 թվերից մեծագույնը։
 
 
-public static void find_the_largest(int x, int y, int z) {
-    int max;
-    if (x >= y && x >= z) {
-        max = x;
-        System.out.println(max);
-    } else if (y >= x && y >= z) {
-        max = y;
-        System.out.println(max);
-    } else {
-        max = z;
-        System.out.println(z);
+    public static void find_the_largest(int x, int y, int z) {
+     /*  this is option one
+      int max;
+
+        if (x >= y && x >= z) {
+            max = x;
+            System.out.println(max);
+        } else if (y >= x && y >= z) {
+            max = y;
+            System.out.println(max);
+        } else {
+            max = z;
+            System.out.println(z);
+        }
     }
-}
+
+
+      */
+        //this is option two
+
+        int max = x;
+
+        if(y > max) {
+            max = y;
+        }
+
+         if(z > max){
+            max = z;
+        }
+        System.out.println(max);
+
+        }
+
+
+
 
 //8․ Գրե՛ք method, որը ստուգում է տրված տարին համարվում է արդյոք նահանջ։
 // (նահանջ է համարվում այն տարին որը բաժանվում է 4, բայց բացառություն է արվում
 // այն տարիների համար, որոնք 100-ի բաժանվող են։ Այդ տարիները նահանջ են միայն,
 // եթե նաև բաժանվում են 400-ի։)
 
-public static void check_leap_year(int year) {
+    public static void check_leap_year(int year) {
 
-    if (year % 4 == 0 && year % 100 != 0) {
-        System.out.println("it is a leap year");
-    } else if (year % 4 == 0 && year % 400 == 0) {
-        System.out.println("it is a leap year");
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            System.out.println("it is a leap year");
 
-    } else if (year % 4 == 0 && year % 400 == 0 && year % 100 == 0) {
-        System.out.println("it is a leap year");
-    } else {
-        System.out.println("it is not a leap year");
+        } else {
+            System.out.println("it is not a leap year");
+        }
+
+
     }
-
-
-}
 
 //(9)11.Գրել method, որը console -ում  տպում է  1 ից  200 թվերը
 
@@ -189,13 +200,13 @@ public static void check_leap_year(int year) {
 
 //(10)12․  Գրել method, որը console -ում տպում է տրված թվի առաջին թվանշանը
 
-public static void print_first_digit(int x) {
-    for (int i = 0; x >= 10; i++) {
-        x = x / 10;
+    public static void print_first_digit(int x) {
+        for (int i = 0; x >= 10; i++) {
+            x = x / 10;
 
+        }
+        System.out.println(x);
     }
-    System.out.println(x);
-}
 
 //(11)13. Տրված են int x = 1, int y = 0.  Քանի դեռ x < 5 ից  և  y < 10  տպել  x+y արտահայտությունը․
 
@@ -204,35 +215,48 @@ public static void print_first_digit(int x) {
 
 //(12)14. Գրել method, որը console -ում տպում է քառակուսի, օգտագործեք * սիմվոլը։
 
-public static void create_square(int num) {
+    public static void create_square(int num) {
 
-    for (int v = 0; v <= num; v++) {
-        for (int b = 0; b <= num; b++) {
-            System.out.print("* ");
+        for (int v = 0; v <= num; v++) {
+            for (int b = 0; b <= num; b++) {
+                System.out.print("* ");
 
+            }
+            System.out.println();
         }
-        System.out.println();
+
+
     }
-
-
-}
 
 //15․ Գրել method, որը console -ից ստանում է  N թիվը և հաշվում է [1-N]
 // բոլոր 5 -ի բաժանվող թվերի գումարը։
 
 
-public static void count_sum(int x) {
-    int sum2 = 0;
-    for (int e = 1; e <= x; e++) {
-        if (e % 5 == 0) {
-            sum2 = sum2 + e;
+    public static void count_sum(int x) {
+        int sum2 = 0;
+        for (int e = 1; e <= x; e++) {
+            if (e % 5 == 0) {
+                sum2 = sum2 + e;
+            }
+
         }
+        System.out.println(sum2);
+    }
+
+    //16. Գրել method, որը հաշվում է [1-N]  բոլոր  երկնիշ զույգ թվերի արտադրյալը։
+    public static void even_multiplied(int n) {
+
+        BigInteger multiplied = BigInteger.ONE;
+
+        for (int k = 10; k <= n && k <=98; k+=2 ) {
+
+            multiplied = multiplied.multiply(BigInteger.valueOf(k));
+            }
+        System.out.println(multiplied);
+
+
 
     }
-    System.out.println(sum2);
-}
-
-//16. Գրել method, որը հաշվում է [1-N]  բոլոր  երկնիշ զույգ թվերի արտադրյալը։
 
 
 //it is written in method
@@ -240,45 +264,41 @@ public static void count_sum(int x) {
 //17․ Գրել method, որը [1-N] հաջորդական  թվերի մեջ գտնում է
 // մեծագույն և փոքրագույն տարրերը և հաշվում նրանց թվաբանական միջինը։
 
-    public static void min_max(int x){
-    int max1 = 1;
+        public static void min_max(int n){
+            int min = 1;
+            int max = n;
+            float middle = (min + max) / 2;
+            System.out.println(middle);
+        }
 
-    for (int a = 0; a < x; a++){
+        //18․ Գրել method, որը  ստանում է 5 - անիշ ամբողջ թիվ  և հաշվում  այդ թվի թվանշանների գումարը։
+        public static void digit_sum1 ( int x){
+            int sum_digit = 0;
+            if (x >= 10000 && x <= 99999) {
+                while (x > 0) {
+                    sum_digit = sum_digit + x % 10;
+                    x = x / 10;
+                }
+                System.out.println(sum_digit);
+            } else {
+                System.out.println("False");
 
-        if(max1 > a){
-            max1 = a;
+            }
 
         }
-        }
-    System.out.println(max1);
     }
 
-    //18․ Գրել method, որը  ստանում է 5 - անիշ ամբողջ թիվ  և հաշվում  այդ թվի թվանշանների գումարը։
-    /*public static void digit_sum(int x){
-        int sum3 = 0;
-        int q = x % 10;
-        sum3 = q;
-        int a = (q /10) % 10;
-        sum3 = sum3 + a;
-        int h = (a/10) % 10;
-        sum3 = sum3 + h;
-        int y = (h/10) % 10;
-        sum3 = sum3 +y;
-        int o = (y/10) % 10;
-        sum3 = sum3 + o;
-        System.out.println(sum3); */
 
-    public static void digit_sum1(int x){
-        int sum4 = 0;
-        while(x > 0){
-            sum4 = sum4 + x%10;
 
-            x = x/10;
-        }
-        System.out.println(sum4);
 
-    }
-}
+
+
+
+
+
+
+
+
 
 
 
