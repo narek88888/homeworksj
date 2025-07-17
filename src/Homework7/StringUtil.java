@@ -412,6 +412,12 @@ result:  “Armenia*************”
     // actual:  “We, are, living, in an, yellow, submarine, We don't,  have anything”
     // result:    have anything
 
+    /**
+     * this method is used to add comma to String and find the longest word in String
+     * @param x
+     * @return the longest word in String
+     */
+
 
     public static String find_the_longest_word_with_comma(String x) {
         String y = x.replace(" ", ",");
