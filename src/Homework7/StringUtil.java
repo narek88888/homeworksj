@@ -39,6 +39,8 @@ public class StringUtil {
         System.out.println(check_null_or_empty(""));
 
         System.out.println(find_the_longest_word_with_comma("java is a programming programming"));
+
+        System.out.println(countSubString("We are living in an yellow submarine. We don't  have anything", "in"));
     }
 
 
@@ -151,22 +153,20 @@ result:  We
    int countSubString(String line, String token)
    token = “in”  ,    line =  “We are living in an yellow submarine. We don't  have anything”
    4 անգամ
-
-     */
-/*
-    public static int countSubString(String line, String token) {
-        int contain = 0;
-        int index = line.indexOf(token);
-
-        while (index >= 0) {
-            contain++;
-            index = line.indexOf(token);
+*/
+    public static int countSubString(String line, String token){
+        int count = 0;
+        for (int i = 0; i < line.length(); i++) {
+            if (line.startsWith(token, i)) {
+                count++;
+            }
         }
-        return contain;
+        return count;
 
     }
 
- */
+
+
 
 
 /*5․  Գրել method, որը  տեքստը սարքում է մեծատառերով գրված, օգտագործելով String.
