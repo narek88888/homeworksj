@@ -31,10 +31,14 @@ public class ArrayUtil {
         int[] h = new int[]{1, 5, 5, 10, 15, 25, 5, 5};
         check_frequency(h);
 
+        int[] v = new int[]{1,5,6,4};
+        printUniqueGroups(v);
+
         int[] i = new int[]{50, 1, 8, 6, 7, 25, 9};
         c(i);
 
         int[] j = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        g(j);
 
 
         //11.Տրված իրական թվերի հաջորդականությունից հեռացնել բոլոր զրոները։
@@ -57,29 +61,31 @@ public class ArrayUtil {
         }
         System.out.println(nums);
 
+        int[] k = new int[]{1, 1, 0, 0, 1, 1};
+        binary_to_decimal(k);
 
 
+
+        int l [] = new int[] {1,5,6,4,9,0,4,7,7,9, 1};
 
 
 
         //Տպել տրված մատրիցի գլխավորա անկյունագծից վերև բոլոր տարերը:
 
-        int matrix1 [][] = new int[][]{{1, 2, 3},
-                                 {4 ,7, 9},
-                                 {9, 2, 5},
+        int matrix1[][] = new int[][]{{1, 2, 3},
+                {4, 7, 9},
+                {9, 2, 5},
         };
 
-        matrix1(matrix1);
 
         matrix2(matrix1);
 
-        int matrix3 [][] = new int[][]{{1, 2, 3},
-                                       {4 ,7, 9},
-                                        {9, 1, 5},
+        int matrix3[][] = new int[][]{{1, 0, 3},
+                {4, 7, 9},
+                {9, 2, 5},
         };
 
-        matrix3(matrix3);
-
+        System.out.println(matrix3(matrix3));
 
 
     }
@@ -166,32 +172,15 @@ public class ArrayUtil {
     //array2 = {7,4,2,3,5}
 
     //array3 = {8,9,8,7,12}
-    /*
 
     public static void add(int[] a, int[] b) {
-        int x = 0;
-        int y = 0;
-        int[] z = new int[50];
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < b.length; j++) {
-                x = a[i] + b[j];
-            }
-            z[i] += x;
-        }
-        System.out.println(Arrays.toString(z));
-    }
-
-     */
-
-    public static void add(int [] a, int [] b){
         int[] c = new int[a.length];
-        if(a.length == b.length){
-            for(int i = 0; i < a.length; i++){
+        if (a.length == b.length) {
+            for (int i = 0; i < a.length; i++) {
                 c[i] = a[i] + b[i];
             }
             System.out.println(Arrays.toString(c));
-        }
-        else{
+        } else {
             System.out.println("Given arrays are not the same size");
         }
 
@@ -205,12 +194,12 @@ public class ArrayUtil {
 
      */
 
-    public static void check_frequency(int[] m){
+    public static void check_frequency(int[] m) {
         int k = 5;
         int existance = 0;
-        for(int i: m){
-            if(i == k){
-                existance+=1;
+        for (int i : m) {
+            if (i == k) {
+                existance += 1;
             }
         }
         System.out.println(existance);
@@ -222,28 +211,23 @@ public class ArrayUtil {
 
                    // {1,5,6},  {1,5,4} ,{1,4,6}, {4,5,6}
      */
-/*
-    public static void find_not_dublicates(int[] m) {
-        int[][] v = new int[3][3];
-        if (m.length >= 3) {
-            for (int i = 0; i < m.length; i++) {
-                for (int j = 1; j < m.length; j++) {
-                    for (int k = 2; k < m.length; k++) {
 
+    public static void printUniqueGroups(int[] numbers) {
+        int n = numbers.length;
 
+        if (numbers.length >= 3) {
 
+            for (int i = 0; i < n - 2; i++) {
+                for (int j = i + 1; j < n - 1; j++) {
+                    for (int k = j + 1; k < n; k++) {
+                        System.out.println(numbers[i] + " " + numbers[j] + " " + numbers[k]);
                     }
-
                 }
             }
         } else {
-            System.out.println("given array length less than 3");
+
         }
-
     }
-
-
- */
 
 
 // 9․ Դասավորել տրված թվերի հաջորդականության անդամները նվազման կարգով:
@@ -252,86 +236,124 @@ public class ArrayUtil {
 
         Arrays.sort(n);
         for (int i = n.length - 1; i >= 0; i--) {
-            System.out.println(i);
+            System.out.println(n[i]);
         }
     }
-/*
+
     //10․ Դասավորել տրված ամբողջ թվերի հաջորդականության անդամներն անյպես, որ վերջում լինեն կենտերը:
 
-    public static void g(int[] n){
-        int index1 = 0;
-        int[] even = new int[n.length];
-        int[] odd = new int[n.length];
+    public static void g(int[] n) {
+
+        int countEven = 0;
+        int countOdd = 0;
 
 
-        for(int i = 0; i < n.length; i++){
-            if(n[i] % 2 == 0){
-                even[index1] = n[i];
-                index1++;
-            }
-
-        }
-
-        int index2 = 0;
-        for(int j = 0; j < n.length; j++){
-            if(n[j] % 2 != 0){
-                odd[index2] = n[j];
-                index2++;
+        for (int i = 0; i < n.length; i++) {
+            if (n[i] % 2 == 0) {
+                countEven++;
+            } else {
+                countOdd++;
             }
         }
 
-        for (int k = 0; k <odd.length; k++ ){
-            even[index1] = odd[k];
-            index1++;
-        }
+            int[] result = new int[countOdd +  countEven];
+            int[] odd2 = new int[countOdd];
 
-        System.out.println(Arrays.toString(even));
+            int index1 = 0;
+            for (int j = 0; j < n.length; j++) {
 
+                if (n[j] % 2 == 0) {
+                    result[index1++] = n[j];
+                }
+            }
 
-        }
+            int index2 = 0;
 
+            for(int k = 0; k < n.length; k++){
 
-
-
-
-  */
-
-    //11.Տրված իրական թվերի հաջորդականությունից հեռացնել բոլոր զրոները։
-    //Oրինակ՝  array = {1,0,6,4,9,0,0}
-    //
-    //                   // {1,6,4,9}
-
-    //it is written in main method
-
-
-    //12․ Տպել տրված թվերի հաջորդականության ամենաերկար աճող ենթահաջորդականությունը:
-    //
-    //Oրինակ՝  array = {1,5,6,4,9,0,4,7,7,9, 1}
-    //
-    //                   // {0,4,7,7,9}
+                if (n[k] % 2 != 0){
+                    odd2[index2++] = n[k];
+                }
+            }
 
 
 
+            int index3 = 0;
+            for(int o = countEven; o < result.length; o++){
+
+                result[o] = odd2[index3++];
+            }
+
+            System.out.println(Arrays.toString(result));
 
 
 
+            }
 
 
 
 
 
 
-    //13․ Ներածել n բնական թիվը 2-ական տեսքով՝ ստանալով 0-ներից ու 1-երից կազմված զանգված և արտածել n  թվի 10-ական ներկայացումը:
-    //
-    //Oրինակ՝    array = {1,1,0,0,1,1}
-    //                   // 51
+
+
+        //11.Տրված իրական թվերի հաջորդականությունից հեռացնել բոլոր զրոները։
+        //Oրինակ՝  array = {1,0,6,4,9,0,0}
+        //
+        //                   // {1,6,4,9}
+
+        //it is written in main method
+
+
+        //12․ Տպել տրված թվերի հաջորդականության ամենաերկար աճող ենթահաջորդականությունը:
+        //
+        //Oրինակ՝  array = {1,5,6,4,9,0,4,7,7,9, 1}
+        //
+        //                   // {0,4,7,7,9}
 
     /*
+
+        public static void the_longest_increasing_sequence(int [] sequence){
+        int index = -1;
+        int all_sequences[] = new int[sequence.length];
+            for (int i = 1; i < sequence.length; i++) {
+                for (int j = 0; j < sequence.length; j++) {
+                    if(sequence[i] > sequence[j]){
+                        all_sequences[index--] = i;
+                    }
+
+                }
+
+            }
+            System.out.println(Arrays.toString(all_sequences));
+        }
+
+     */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //13․ Ներածել n բնական թիվը 2-ական տեսքով՝ ստանալով 0-ներից ու 1-երից կազմված զանգված և արտածել n  թվի 10-ական ներկայացումը:
+        //
+        //Oրինակ՝    array = {1,1,0,0,1,1}
+        //                   // 51
+
+
     public static void binary_to_decimal(int[] nums){
         int sum = 0;
         int power = 0;
 
-        for(int i = nums.length; i >= 0; i--){
+        for(int i = nums.length - 1; i >= 0; i--){
             sum = (int) (Math.pow(2 , power) * nums[i] + sum);
             power++;
 
@@ -341,11 +363,12 @@ public class ArrayUtil {
 
     }
 
-     */
 
-    //14․ Տպել տրված մատրիցի գլխավորա անկյունագծից վերև բոլոր տարերը:
 
-    //
+        //14․ Տպել տրված մատրիցի գլխավորա անկյունագծից վերև բոլոր տարերը:
+
+        //
+         /*
 
     public static void matrix1(int[][] matrix){
         for(int i = 0; i < matrix.length; i++){
@@ -358,58 +381,65 @@ public class ArrayUtil {
         }
     }
 
-    //15․ Շրջել տրված ամբողջ թվերի քառակուսային մատրիցը գլխավոր անկյունագծի նկատմամբ:
+          */
 
-    /** This method is used to rotate a given square matrix of integers about the main diagonal.
-     * this method is used to
-     * @param matrix
-     */
 
-    public static void matrix2(int [][] matrix){
-        for(int i = 0; i < matrix.length; i++ ){
-            for(int j = 0; j < matrix[i].length; j++){
-                matrix[j][i] = matrix[i][j];
-            }
-        }
-        System.out.println(Arrays.deepToString(matrix));
-    }
+        //15․ Շրջել տրված ամբողջ թվերի քառակուսային մատրիցը գլխավոր անկյունագծի նկատմամբ:
 
-    //16․ Տրված բնական թվերի քառակուսային մատրիցի համար արտածել YES, եթե նրա բոլոր տողերի տարրերի գումարը զույգ է։  NO հակառակ դեպքում։
-    //
-    //Oրինակ՝    a = {1,-1,0,0}
-    //    {2,-2,1,-1}        // YES
-    //    {9,7,1,-17}
-    //
-    //                      a = {1,2,0,0}
-    //    {2,-2,1,-1}        //NO
-    //    {9,7,1,-17}
+        /** This method is used to rotate a given square matrix of integers about the main diagonal.
+         * this method is used to
+         * @param matrix
+         */
 
-    /**
-     * This method is used to determine whether the sum of the row numbers of a given matrix is even.
-     * @param matrix
-     */
 
-    public static void matrix3(int [][] matrix) {
-
-        int sum = 0;
-
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                sum += matrix[i][j];
+        public static void matrix2 ( int[][] matrix){
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    matrix[j][i] = matrix[i][j];
                 }
             }
-
-        if(sum % 2 == 0){
-            System.out.println("YES");
-        }
-        else {
-            System.out.println("NO");
+            System.out.println(Arrays.deepToString(matrix));
         }
 
+        //16․ Տրված բնական թվերի քառակուսային մատրիցի համար արտածել YES, եթե նրա բոլոր տողերի տարրերի գումարը զույգ է։  NO հակառակ դեպքում։
+        //
+        //Oրինակ՝    a = {1,-1,0,0}
+        //    {2,-2,1,-1}        // YES
+        //    {9,7,1,-17}
+        //
+        //                      a = {1,2,0,0}
+        //    {2,-2,1,-1}        //NO
+        //    {9,7,1,-17}
+
+
+        /**
+         * This method is used to determine whether the sum of the row numbers of a given matrix is even.
+         */
+
+
+        public static String  matrix3 (int[][] matrix){
+
+
+
+            for (int i = 0; i < matrix.length; i++) {
+                int sum = 0;
+
+                for (int j = 0; j < matrix[i].length; j++) {
+                    sum += matrix[i][j];
+
+                }
+                if (sum % 2 != 0){
+                    return "No";
+                }
+
+
+            }
+            return "Yes";
+
+
 
 
         }
 
 
-}
-
+    }
