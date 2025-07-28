@@ -1,5 +1,6 @@
 package homework9;
 import java.time.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class time {
@@ -56,6 +57,16 @@ public class time {
 
         System.out.println(find_the_difference(x,y));
 
+        //10
+        String[] zones1 = ZoneId.getAvailableZoneIds().toArray(new String[0]);
+        String[] zones2 = new String[zones1.length];
+        for (int i = 0; i < zones1.length; i++) {
+            zones2[i] = zones1[i];
+        }
+        System.out.println(Arrays.toString(zones2));
+
+
+
         //9. Ask the user to enter a date and tell whether it’s a Saturday or Sunday using getDayOfWeek().
 
         Scanner scanner = new Scanner(System.in);
@@ -78,8 +89,7 @@ public class time {
 
         //10․ Print all available time zone IDs using ZoneId.getAvailableZoneIds().
 
-        String zones
-        zones = ZoneId.getAvailableZoneIds();
+       //it is written before 9 task
 
 
 
@@ -166,7 +176,8 @@ public class time {
     //9.Ask the user to enter a date and tell whether it’s a Saturday or Sunday using getDayOfWeek().
     // it is written in main method
 
-    //
+     //10․ Print all available time zone IDs using ZoneId.getAvailableZoneIds().
+    // it is written in main method
 
 
 
