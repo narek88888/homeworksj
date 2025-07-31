@@ -1,6 +1,6 @@
 package experiments;
 
-/*
+
 public class experiments2 {
 
  int i = 8;
@@ -21,11 +21,11 @@ public class experiments2 {
 
     public static void main(String[] args){
         System.out.println(i);
-        System.out.println(test());
+        System.out.println(test(i));
     }
 
 
 }
 
 
- */
+
