@@ -31,7 +31,7 @@ public class task8 {
         Randomly randomly = x.new Randomly();
 
         System.out.println(binary.printBinary(10));
-        System.out.println(binary.printBinary(binary.printBinary(randomly.y)));
+        //System.out.println(binary.printBinary(binary.printBinary(randomly.y)));
     }
 
 }

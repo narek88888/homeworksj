@@ -1,6 +1,5 @@
 package homework10;
 
-import java.util.Random;
 
 //6.Create a class with a static method that accepts two strings and
 // returns a string that contains all the characters that appear in
@@ -9,24 +8,31 @@ import java.util.Random;
 
 public class task6 {
     class A{
-        public static String doTask(String x, String y){
+        public static String doTask(String x, String y) {
+            String[] all = {"qwertyuiop[]asdfghjklzxcvbnm,./<>;'zxcvbnm,./1234567890!@#$%^&*()_-+=~"};
+
             String a = "Davo";
-            if(a.contains(x) && a.contains(y)){
-                return a;
+
+            int i;
+
+            for (i = 0; i < all.length; i++) {
+                if (x.contains(all[i]) && y.contains(all[i]) && a.contains((all[i]))) {
+                    System.out.println("there is common characters");
+
+                } else {
+                    System.out.println("there is not common characters");
+                }
 
             }
-            else{
-                return "that String does not contains all the characters that both of them have";
-            }
 
-        }
 
-        class B {
-
+            return all[i];
         }
 
 
     }
+
+
 
     public static void main(String[] args){
         System.out.println(A.doTask("Gago", "Davo"));
