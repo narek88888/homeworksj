@@ -1,4 +1,4 @@
-package Homework3;
+package homework3;
 
 public class Variables {
 

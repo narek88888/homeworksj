@@ -1,4 +1,4 @@
-package Homework4;//7.Սահմանել Car class-ը, որը ունի
+package homework4;//7.Սահմանել Car class-ը, որը ունի
 //● instance  fields (model, modelNumber , color, currentSpeed (default արժեքը 0),
 // isEngineStart (true or false))
 //● methods (stopEngine() անջատում է մատոռը , startEngine()  միացնում է մատոռը)

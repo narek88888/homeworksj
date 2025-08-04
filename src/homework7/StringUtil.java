@@ -1,7 +1,4 @@
-package Homework7;
-
-import java.util.StringJoiner;
-import java.util.concurrent.LinkedBlockingDeque;
+package homework7;
 
 public class StringUtil {
     public static void main(String[] args) {

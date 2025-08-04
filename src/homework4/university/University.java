@@ -2,7 +2,7 @@
 // .java ֆայլերում և տարբեր studen / university package ներում:
 
 
-package Homework4.university;
+package homework4.university;
 
 public class University {
 }

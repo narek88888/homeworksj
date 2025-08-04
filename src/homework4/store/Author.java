@@ -3,7 +3,7 @@
 
 // Homework lesson 4
 
-package Homework4.store;
+package homework4.store;
 
 public class Author{
 

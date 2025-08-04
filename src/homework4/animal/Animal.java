@@ -3,7 +3,7 @@
 
 // Homework lesson 4
 
-package Homework4.animal;
+package homework4.animal;
 
 public class Animal {
 

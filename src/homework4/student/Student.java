@@ -3,7 +3,7 @@
 
 // Homework lesson 4
 
-package Homework4.student;
+package homework4.student;
 
 public class Student {
 }

@@ -1,4 +1,4 @@
-package Homework4;//4.Սահմանել City class : instance fields (char code , int  population ) .
+package homework4;//4.Սահմանել City class : instance fields (char code , int  population ) .
 //Ստեղծել  main method -ում  object ներ yerevan, moscow, new york , paris
 // քաղաքները  համապատասխան  code - քաղաքի անվան առաջին տառ,
 // population մարդաքանակով ։

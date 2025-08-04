@@ -1,4 +1,4 @@
-package Homework4;//6.Սահմանել Employee class-ը, որը ունի
+package homework4;//6.Սահմանել Employee class-ը, որը ունի
 //● instance  fields (id, departmentNumber, age , gender)
 //● methods printEmployee() որը տպում է Employee մասին ամբողջական ինֆորմացիա։
 //Ստեղծել  3 աշխատող( 2 տղա և 1 աղջիկ), որոնցից երկուսը աշխատում են

@@ -1,4 +1,4 @@
-package Homework4;//5․ Սահմանել Rectangle class : instance  fields (int length, int width )  , methods ( calculateArea() ) .
+package homework4;//5․ Սահմանել Rectangle class : instance  fields (int length, int width )  , methods ( calculateArea() ) .
 //Ստեղծել  ուղղանկյուն (բարձրություն 5,  լայնություն 14)  և հաշվել  ուղղանկյան մակերեսը ։
 
 // Homework lesson 4

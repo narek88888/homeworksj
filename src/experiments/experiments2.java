@@ -3,7 +3,8 @@ package experiments;
 
 public class experiments2 {
 
- int i = 8;
+  int i = 8;
+
     {
         int i = 30;
 
@@ -20,6 +21,7 @@ public class experiments2 {
     }
 
     public static void main(String[] args){
+        System.out.println();
 
     }
 
