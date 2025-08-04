@@ -20,12 +20,20 @@ public class experiments2 {
     }
 
     public static void main(String[] args){
-        System.out.println(i);
-        System.out.println(test(i));
+
     }
 
 
 }
+
+
+
+
+
+
+
+
+
 
 
 
