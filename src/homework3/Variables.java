@@ -3,54 +3,50 @@ package homework3;
 public class Variables {
 
     public static void main(String[] args) {
+        //1
             byte a = 100;
             byte b = 40;
             byte_print(a, b);
-
+//2
             short c = 3000;
             short ww = 200;
             short_print(c,ww);
-
+//3
             int e = 1000000;
             int f = 2000000;
 
             int_print(e,f);
-
+//4
             long g = 10000000l;
             long u = 100000000l;
             long_print(g,u);
+//5
 
-            byte maxbb = 127;
-            byte minbb = -127;
-            short maxss = 32767;
-            short minss = -32767;
-            int maxii = 2147483647;
-            int minii = -2147483648;
-            long maxll = 9223372036854775807l;
-            long minll = -9223372036854775808l;
-
-            print_max_min_values_of_primitive_types(maxbb, minbb, maxss, minss, maxii, minii, maxll, minll);
-
-
+            print_max_min_values_of_float_double();
+//6
             byte y = 0b1010011;
             int z = 0b011011100;
 
             print_binary(y,z);
-
+//7
             float ll = 5.5f;
             float k = 100.6f;
 
             print_float(ll,k);
-
+//8
             double tt = 1.1545111154152151;
             double kk = 5.5987613111151505151135153111151561511156151151561515161165415;
 
             print_double(tt,kk);
-
+//9
             char w = 'a';
             char o = 'b';
 
             print_char(w,o);
+
+            print_max_min_values();
+
+
 
 
             //11.1 Տպել char s = 77;  և char w = 109;  արժեքները;
@@ -126,8 +122,8 @@ public class Variables {
 
     /**
      * this method is used to print values of byte a and byte b
-     * @param byte o
-     * @param byte p
+     * @param  o
+     * @param  t
      */
 
     public static void byte_print(byte o, byte t) {
@@ -180,25 +176,19 @@ public class Variables {
 
     /**
      * this method is used to print max and min values of byte, short, int and long
-     * @param maxb
-     * @param minb
-     * @param maxs
-     * @param mins
-     * @param maxi
-     * @param mini
-     * @param maxl
-     * @param minl
+     3
      */
 
-    public static void print_max_min_values_of_primitive_types(byte maxb, byte minb, short maxs, short mins, int maxi, int mini, long maxl, long minl){
-        System.out.println(maxb);
-        System.out.println(minb);
-        System.out.println(maxs);
-        System.out.println(mins);
-        System.out.println(maxi);
-        System.out.println(mini);
-        System.out.println(maxl);
-        System.out.println(minl);
+    public static void print_max_min_values(){
+
+        System.out.println(Byte.MAX_VALUE);
+        System.out.println(Byte.MIN_VALUE);
+        System.out.println(Short.MAX_VALUE);
+        System.out.println(Short.MIN_VALUE);
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.MIN_VALUE);
+        System.out.println(Long.MAX_VALUE);
+        System.out.println(Long.MIN_VALUE);
     }
 
     // 6. Ստեղծել 2  փոփոխական (byte և int ) , վերագրել կամայական արժեքներ 2-ական տեսքով  և տպել   console -ում
@@ -249,10 +239,7 @@ public class Variables {
 
     /**
      * this method is used to print  max and min values of float and double
-     * @param maxf
-     * @param minf
-     * @param maxd
-     * @param mind
+
      */
 
     public static void print_max_min_values_of_float_double(){
