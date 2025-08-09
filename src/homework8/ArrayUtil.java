@@ -76,11 +76,24 @@ public class ArrayUtil {
 
 
         //Տպել տրված մատրիցի գլխավորա անկյունագծից վերև բոլոր տարերը:
+        int matrix1[][] = new int[][] {
+                {1,2,7},
+                {3,4,6},
+                {1,2,4}
+        };
+
+
+
+        matrix1(matrix1);
+
 
 
         int matrix[][] = new int[][] {
-                {1,2},
-                {3,4}
+                {1,2,7},
+                {3,4,8},
+                {4,6,7}
+
+
         };
 
         System.out.println(Arrays.deepToString(matrix));
@@ -369,13 +382,13 @@ public class ArrayUtil {
 
         //14․ Տպել տրված մատրիցի գլխավորա անկյունագծից վերև բոլոր տարերը:
 
-        //
-         /*
+
+
 
     public static void matrix1(int[][] matrix){
         for(int i = 0; i < matrix.length; i++){
             for(int j = 0; j < matrix[i].length; j++){
-                if(j > i){ Շրջել տրված ամբողջ թվերի քառակուսային մատրիցը գլխավոր անկյունագծի նկատմամբ:
+                if(j > i){
                     System.out.println(matrix[i][j]);
                 }
 
@@ -383,7 +396,7 @@ public class ArrayUtil {
         }
     }
 
-          */
+
 
 
         //15․ Շրջել տրված ամբողջ թվերի քառակուսային մատրիցը գլխավոր անկյունագծի նկատմամբ:
