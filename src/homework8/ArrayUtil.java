@@ -30,8 +30,9 @@ public class ArrayUtil {
         int[] h = new int[]{1, 5, 5, 10, 15, 25, 5, 5};
         check_frequency(h);
 
-        int[] v = new int[]{1,5,6,4};
-        printUniqueGroups(v);
+        int[] array = new int[] {1,2,3,4};
+        printUniqueGroups(array);
+
 
         int[] i = new int[]{50, 1, 8, 6, 7, 25, 9};
         c(i);
@@ -242,12 +243,12 @@ public class ArrayUtil {
             for (int i = 0; i < n - 2; i++) {
                 for (int j = i + 1; j < n - 1; j++) {
                     for (int k = j + 1; k < n; k++) {
-                        System.out.println(numbers[i] + " " + numbers[j] + " " + numbers[k]);
+                        if (numbers[i] != numbers[j] && numbers[i] != numbers[k] && numbers[j] != numbers[k]) {
+                            System.out.println(numbers[i] + " " + numbers[j] + " " + numbers[k]);
+                        }
                     }
                 }
             }
-        } else {
-
         }
     }
 
