@@ -69,15 +69,25 @@ public class ArrayUtil {
 
 
 
+
+        int[] x = {1,5,6,4,9,0,4,7,7,9, 1};
+
+
+
+
         //Տպել տրված մատրիցի գլխավորա անկյունագծից վերև բոլոր տարերը:
 
-        int matrix1[][] = new int[][]{{1, 2, 3},
-                {4, 7, 9},
-                {9, 2, 5},
+
+        int matrix[][] = new int[][] {
+                {1,2},
+                {3,4}
         };
 
+        System.out.println(Arrays.deepToString(matrix));
+        matrixMain(matrix);
 
-        matrix2(matrix1);
+
+
 
         int matrix3[][] = new int[][]{{1, 0, 3},
                 {4, 7, 9},
@@ -305,21 +315,21 @@ public class ArrayUtil {
 
 
         //12․ Տպել տրված թվերի հաջորդականության ամենաերկար աճող ենթահաջորդականությունը:
-        //
         //Oրինակ՝  array = {1,5,6,4,9,0,4,7,7,9, 1}
         //
         //                   // {0,4,7,7,9}
 
-    /*
 
-        public static void the_longest_increasing_sequence(int [] sequence){
-        int index = -1;
+     /*   public static void the_longest_increasing_sequence(int [] sequence){
+        int index = sequence.length -1;
         int all_sequences[] = new int[sequence.length];
             for (int i = 1; i < sequence.length; i++) {
                 for (int j = 0; j < sequence.length; j++) {
                     if(sequence[i] > sequence[j]){
-                        all_sequences[index--] = i;
+                        all_sequences[index] = sequence[i];
+                        --index;
                     }
+
 
                 }
 
@@ -327,14 +337,7 @@ public class ArrayUtil {
             System.out.println(Arrays.toString(all_sequences));
         }
 
-     */
-
-
-
-
-
-
-
+      */
 
 
 
@@ -372,7 +375,7 @@ public class ArrayUtil {
     public static void matrix1(int[][] matrix){
         for(int i = 0; i < matrix.length; i++){
             for(int j = 0; j < matrix[i].length; j++){
-                if(j > i){
+                if(j > i){ Շրջել տրված ամբողջ թվերի քառակուսային մատրիցը գլխավոր անկյունագծի նկատմամբ:
                     System.out.println(matrix[i][j]);
                 }
 
@@ -391,14 +394,17 @@ public class ArrayUtil {
          */
 
 
-        public static void matrix2 ( int[][] matrix){
+        public static void matrixMain (int[][] matrix){
             for (int i = 0; i < matrix.length; i++) {
-                for (int j = 0; j < matrix[i].length; j++) {
-                    matrix[j][i] = matrix[i][j];
+                for (int j = i + 1; j < matrix[i].length; j++) {
+                    int saver = matrix[i][j];
+                    matrix[i][j] = matrix[j][i];
+                    matrix[j][i] = saver;
                 }
             }
             System.out.println(Arrays.deepToString(matrix));
         }
+
 
         //16․ Տրված բնական թվերի քառակուսային մատրիցի համար արտածել YES, եթե նրա բոլոր տողերի տարրերի գումարը զույգ է։  NO հակառակ դեպքում։
         //
