@@ -20,13 +20,11 @@ In one course students cannot have the same id.
 
  */
 
-import java.util.ArrayList;
-
 public class Student {
 
     private String name;
     private String id;// Աշակերտների ցուցակ
-    private ArrayList<Student> students;
+    private ArrayList<String> students;
 
 
 
@@ -52,8 +50,11 @@ public class Student {
         this.id = id;
     }
 
-    public void enroll(Course course){
+    public void addStudent(String student){
+        students.add(student);
+    }
 
+    public void enroll(Course course){
 
     }
 
