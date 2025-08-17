@@ -53,6 +53,9 @@ public class Book {
         if(price >= 10){
             this.price = price;
         }
+        else {
+            System.out.println("the book price must be minimum 10$");
+        }
     }
 
 

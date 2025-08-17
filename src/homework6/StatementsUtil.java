@@ -59,7 +59,7 @@ public class StatementsUtil {
         even_multiplied(98);
 
         min_max(12);
-        digit_sum1(11111);
+        digit_sum1(51255);
 
 
     }

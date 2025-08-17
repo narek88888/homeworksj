@@ -6,7 +6,7 @@ public class experiments2 {
   int i = 8;
 
     {
-        int i = 30;
+        i = 30;
 
     }
 

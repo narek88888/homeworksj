@@ -50,6 +50,7 @@ public class Car {
            return engineType;
        }
 
+
        public void setEngineType(char engineType){
        String x = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
 
@@ -59,7 +60,6 @@ public class Car {
                }
                else{
                    System.out.println("given engine type name is wrong, give one letter");
-
                }
            }
 

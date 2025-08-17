@@ -34,5 +34,11 @@ public class Course {
         this.capacity = capacity;
     }
 
+    public static void main(String[] args){
+        Course course1 = new Course();
+        Course course2 = new Course();
+
+    }
+
 
 }

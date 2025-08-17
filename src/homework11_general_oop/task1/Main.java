@@ -36,8 +36,14 @@ public class Main {
        libary2.showBooks();
        libary1.showBooks();
 
-       book1.setPrice(50);
+       book1.setPrice(9);
+       book1.setPrice(52);
         System.out.println(book1.getPrice());
+
+        book1.setTitle("Harry Potter");
+        System.out.println(book1.getTitle());
+        System.out.println(book1.getAuthor());
+
 
 
 
