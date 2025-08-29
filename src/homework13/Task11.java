@@ -30,7 +30,7 @@ public class Task11 {
 
             }
         } catch (ExceptionForEmpty e) {
-            System.out.println("");
+            System.out.println("it can't be empty or null");
 
         }
     }

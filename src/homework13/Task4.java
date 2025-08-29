@@ -14,27 +14,46 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 
-class FileReadException extends Exception{}
+
 
 public class Task4 {
 
-    public static void printFileContent(String fileName) throws FileNotFoundException, FileReadException {
+    public static void main(String[] args) {
+
+        Scanner inputScanner = new Scanner(System.in);
+
+        System.out.println("Enter the file name");
+
+        String fileName = inputScanner.nextLine();
+
         File file = new File(fileName);
 
-        if (!file.exists()) {
-            throw new FileNotFoundException();
-        }
-            try (Scanner fileScanner = new Scanner(file)) {
-                while (fileScanner.hasNextLine()) {
-                    String line = fileScanner.nextLine();
-                    System.out.println(line);
+        try(Scanner fileScanner = new Scanner(file) ) {
 
-                }
-            } //catch (FileReadException e) {
-                throw new  FileReadException();
+            if (!file.exists()) {
+                throw new  FileNotFoundException();
 
+            }
+            while (fileScanner.hasNextLine()){
+                String line = fileScanner.nextLine();
+                System.out.println(line);
             }
 
 
+        }catch (FileNotFoundException e1){
+            System.out.println("file doesn't exist or can't be opened");
+
+        }finally {
+            inputScanner.close();
+
+        }
+
+
+
+
+
+
+
+    }
     }
 

@@ -1,5 +1,5 @@
 package experiments;
-
+/*
 public class BigCat {
     public String name = "cat";
     protected boolean hasFur = true;
@@ -17,3 +17,7 @@ public class BigCat {
 
 
 }
+
+ */
+public class H{}
+
