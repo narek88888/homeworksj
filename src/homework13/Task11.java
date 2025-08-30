@@ -11,7 +11,7 @@ package homework13;
  */
 
 import java.util.Scanner;
-class ExceptionForEmpty extends Exception{}
+class InvalidString extends Exception{};
 
 
 
@@ -20,18 +20,50 @@ public class Task11 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("write a word");
         String input = scanner.nextLine();
+        char[] vowels = new char[]{'I', 'U', 'O', 'E', 'A'};
+        String letters = "qwertyuiopasdfghjklzxcvbnm";
+
 
         try {
-            if(input == null || input.length() == 0){
-                throw new ExceptionForEmpty();
-            }
-            else {
-                System.out.println(input.toUpperCase());
+            if (input.length() == 0 || input == null) {
+                throw new NullPointerException();
 
             }
-        } catch (ExceptionForEmpty e) {
-            System.out.println("it can't be empty or null");
 
+            for (int i = 0; i < input.length(); i++) {
+                char v = input.charAt(i);
+                if(!Character.isLetter(v)){
+                    throw new  InvalidString();
+                }
+
+            }
+
+
+            String upperCase = input.toUpperCase();
+            System.out.println(upperCase);
+
+            StringBuilder stringBuilder = new StringBuilder(upperCase).reverse();
+            System.out.println(stringBuilder);
+
+
+            int count = 0;
+
+            for (char i : vowels) {
+                if (upperCase.indexOf(i) != -1) {
+                    count++;
+
+                }
+            }
+
+            System.out.println(count);
+
+
+        } catch (NullPointerException e2) {
+            System.out.println("it can't be null or empty");
+
+
+        } catch (InvalidString e) {
+            System.out.println("invalid String");
         }
     }
 }
