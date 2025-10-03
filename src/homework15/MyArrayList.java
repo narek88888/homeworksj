@@ -4,11 +4,30 @@ package homework15;
 
 import java.util.*;
 
-public abstract class MyArrayList implements List<Integer> {
+public  class MyArrayList implements List<Integer> {
 
-    private final int DEFAULT_CAPACITY = 10;
-    int size = 0;
-    Integer[] data = new Integer[DEFAULT_CAPACITY];
+    private static final int DEFAULT_CAPACITY = 10;
+
+    private Integer[] data;
+
+    private int size;
+
+    public MyArrayList(){
+        this.data = new Integer[DEFAULT_CAPACITY];
+    }
+
+    public MyArrayList(int initialCapacity){
+        if(initialCapacity > 0){
+            this.data = new Integer[initialCapacity];
+        }else if(initialCapacity == 0){
+            this.data = new Integer[DEFAULT_CAPACITY];
+        }else {
+            throw new IllegalArgumentException("it can't be less than 0");
+        }
+
+    }
+
+
 
 
 
@@ -16,7 +35,7 @@ public abstract class MyArrayList implements List<Integer> {
     @Override
     public int size() {
         size = 0;
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 0; i < size; i++) {
             size = i;
         }
         return size;
@@ -25,7 +44,7 @@ public abstract class MyArrayList implements List<Integer> {
     @Override
     public boolean isEmpty() {
         boolean x;
-        if(data.length == 0){
+        if(size == 0){
             x = true;
         }else {
             x = false;
@@ -36,7 +55,7 @@ public abstract class MyArrayList implements List<Integer> {
     @Override
     public boolean contains(Object o) {
         boolean x = false;
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 0; i < size; i++) {
             if(data[i].equals(o)){
                 x = true;
                 break;
@@ -45,58 +64,77 @@ public abstract class MyArrayList implements List<Integer> {
         return x;
     }
 
+    @Override
+    public Iterator<Integer> iterator() {
+        return null;
+    }
 
 
     @Override
     public Object[] toArray() {
         Integer[] array = new Integer[data.length];
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 0; i < size; i++) {
             array[i] = data[i];
         }
         return array;
     }
 
+    @Override
+    public <T> T[] toArray(T[] a) {
+        return null;
+    }
 
-/*
+
+
+
+
     @Override
     public boolean add(Integer integer) {
-        if(size == data.length){
+        if (size == data.length) {
             int newCapacity = data.length * 2;
-            Integer[] newData = new Integer[newCapacity];
-            newData[data.length + 1] = integer;
+            Integer[] newdata = new Integer[newCapacity];
+            for (int i = 0; i < size; i++) {
+                newdata[i] = data[i];
+            }
+            newdata[size] = integer;
 
+        }else {
+            data[size + 1] = integer;
         }
+        size++;
         return true;
-
 
     }
 
 
- */
+
 
 
 
     @Override
     public boolean remove(Object o) {
-        boolean x = false;
+
         int index = -1;
-        for (int i = 0; i < data.length; i++){
+        for (int i = 0; i < size; i++){
             if(data[i].equals(o)){
                 index = i;
-                x = true;
                 break;
             }
         }
 
         if(index == -1){
-            x = false;
+            return false;
         }
+            for (int i = index; i < size - 1; i++) {
+                data[i] = data[i + 1];
+            }
+            data[size - 1] = null;
+            size--;
 
-        for (int i = index; i < data.length; i++){
-            data[i] = data[i + 1];
-        }
-        return x;
+        return true;
+
     }
+
 
     @Override
     public boolean containsAll(Collection<?> c) {
@@ -118,11 +156,15 @@ public abstract class MyArrayList implements List<Integer> {
         return false;
     }
 
+    @Override
+    public boolean retainAll(Collection<?> c) {
+        return false;
+    }
 
 
     @Override
     public void clear() {
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 0; i < size; i++) {
             data[i] = null;
             
         }
@@ -148,6 +190,22 @@ public abstract class MyArrayList implements List<Integer> {
     @Override
     public void add(int index, Integer element) {
 
+        if(size == data.length ){
+            int newCapacity = 2 * data.length;
+            Integer[] newdata = new Integer[newCapacity];
+            for (int i = 0; i < size; i++) {
+                newdata[i] = data[i];
+
+            }
+
+            newdata[index] = element;
+
+        }else {
+            for (int i = index; i < size; i++) {
+                data[i + 1] = data[i + 1];
+            }
+
+        }
     }
 
     @Override
@@ -172,7 +230,7 @@ public abstract class MyArrayList implements List<Integer> {
     @Override
     public int indexOf(Object o) {
         int index = 0;
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 0; i < size; i++) {
             if(data[i].equals(o)){
                 index = i;
                 break;
@@ -192,6 +250,21 @@ public abstract class MyArrayList implements List<Integer> {
         }
         return index;
 
+    }
+
+    @Override
+    public ListIterator<Integer> listIterator() {
+        return null;
+    }
+
+    @Override
+    public ListIterator<Integer> listIterator(int index) {
+        return null;
+    }
+
+    @Override
+    public List<Integer> subList(int fromIndex, int toIndex) {
+        return List.of();
     }
 
 }
