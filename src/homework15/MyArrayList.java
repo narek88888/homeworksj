@@ -28,40 +28,33 @@ public  class MyArrayList implements List<Integer> {
     }
 
 
-
-
-
-
     @Override
     public int size() {
-        size = 0;
-        for (int i = 0; i < size; i++) {
-            size = i;
-        }
         return size;
     }
 
     @Override
     public boolean isEmpty() {
-        boolean x;
-        if(size == 0){
-            x = true;
-        }else {
-            x = false;
-        }
-        return x;
+        return size == 0;
     }
 
     @Override
     public boolean contains(Object o) {
-        boolean x = false;
-        for (int i = 0; i < size; i++) {
-            if(data[i].equals(o)){
-                x = true;
-                break;
+        if(o == null){
+            for (int i = 0; i < size; i++) {
+                if(data[i] == null){
+                    return true;
+                }
+
+            }
+        }else {
+            for (int i = 0; i < size; i++) {
+                if(data[i] == o){
+                    return true;
+                }
             }
         }
-        return x;
+        return false;
     }
 
     @Override
@@ -84,33 +77,6 @@ public  class MyArrayList implements List<Integer> {
         return null;
     }
 
-
-
-
-
-    @Override
-    public boolean add(Integer integer) {
-        if (size == data.length) {
-            int newCapacity = data.length * 2;
-            Integer[] newdata = new Integer[newCapacity];
-            for (int i = 0; i < size; i++) {
-                newdata[i] = data[i];
-            }
-            newdata[size] = integer;
-
-        }else {
-            data[size + 1] = integer;
-        }
-        size++;
-        return true;
-
-    }
-
-
-
-
-
-
     @Override
     public boolean remove(Object o) {
 
@@ -125,7 +91,7 @@ public  class MyArrayList implements List<Integer> {
         if(index == -1){
             return false;
         }
-            for (int i = index; i < size - 1; i++) {
+            for (int i = index; i < size; i++) {
                 data[i] = data[i + 1];
             }
             data[size - 1] = null;
@@ -187,6 +153,26 @@ public  class MyArrayList implements List<Integer> {
         return element;
     }
 
+
+
+    @Override
+    public boolean add(Integer integer) {
+        if (size == data.length) {
+            int newCapacity = data.length * 2;
+            Integer[] newdata = new Integer[newCapacity];
+            for (int i = 0; i < size; i++) {
+                newdata[i] = data[i];
+            }
+            data = newdata;
+
+
+        }
+        data[size] = integer;
+        size++;
+        return true;
+
+    }
+
     @Override
     public void add(int index, Integer element) {
 
@@ -195,41 +181,49 @@ public  class MyArrayList implements List<Integer> {
             Integer[] newdata = new Integer[newCapacity];
             for (int i = 0; i < size; i++) {
                 newdata[i] = data[i];
-
             }
-
-            newdata[index] = element;
+            data = newdata;
+            data[index] = element;
 
         }else {
             for (int i = index; i < size; i++) {
-                data[i + 1] = data[i + 1];
+                data[i + 1] = data[i];
             }
+            data[index] = element;
 
         }
+        size++;
     }
 
     @Override
     public Integer remove(int index) {
         int index_keeper = -1;
-        for (int i = 0; i < data.length; i++) {
+        int removedElement = data[index];
+        for (int i = 0; i < size; i++) {
             if(i == index){
                 index_keeper = i;
                 break;
             }
         }
-
         if(index_keeper != -1){
-            for (int j = index_keeper; j < data.length; j++) {
+            for (int j = index_keeper; j < size - 1; j++) {
                 data[j] = data[j + 1];
             }
+
+        }else {
+            return -1;
         }
-        return data[index];
+        data[size - 1] = null;
+        size--;
+
+        return removedElement;
+
 
     }
 
     @Override
     public int indexOf(Object o) {
-        int index = 0;
+        int index = -1;
         for (int i = 0; i < size; i++) {
             if(data[i].equals(o)){
                 index = i;
@@ -242,7 +236,7 @@ public  class MyArrayList implements List<Integer> {
     @Override
     public int lastIndexOf(Object o) {
         int index = -1;
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 0; i < size; i++) {
             if(data[i].equals(o)){
                 index = i;
 
@@ -265,6 +259,51 @@ public  class MyArrayList implements List<Integer> {
     @Override
     public List<Integer> subList(int fromIndex, int toIndex) {
         return List.of();
+    }
+
+    @Override
+    public String toString(){
+        if(size ==0){
+            return "[]";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+
+        for (int i = 0; i < size; i++) {
+            sb.append(data[i]);
+
+            if(i < size - 1){
+                sb.append(", ");
+            }
+        }
+
+        sb.append("]");
+
+    return sb.toString();
+
+
+    }
+
+    public static void main(String[] args) {
+        MyArrayList list1 = new MyArrayList(3);
+        list1.add(10);
+        list1.add(20);
+        list1.add(30);
+
+        System.out.println(list1.remove(0));
+        Integer num1 = 20;
+        Integer num2 = 30;
+        System.out.println(list1.remove(num1));
+
+        System.out.println(list1.toString());
+        System.out.println(list1.get(0));
+        System.out.println(list1.size());
+        System.out.println(list1.indexOf(num2));
+        System.out.println(list1.lastIndexOf(num2));
+        list1.add(1,5);
+        System.out.println(list1.toString());
+
     }
 
 }

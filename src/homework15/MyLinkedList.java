@@ -16,6 +16,12 @@ public class MyLinkedList implements List<Integer> {
         Node previous;
         Node next;
         Integer data;
+
+        Node(Integer data){
+            this.data = data;
+            this.previous = null;
+            this.next = null;
+        }
     }
 
     @Override
@@ -33,6 +39,7 @@ public class MyLinkedList implements List<Integer> {
         for (Node x = head; x != null; x = x.next) {
             if(x.equals(o)){
                 return true;
+
             }
         }
         return false;
@@ -56,11 +63,40 @@ public class MyLinkedList implements List<Integer> {
 
     @Override
     public boolean add(Integer integer) {
+       Node newNode = new Node(integer);
+       if(head == null){
+           head = newNode;
+           tail = newNode;
+
+       }else {
+           tail.next = newNode;
+           newNode.previous = tail;
+           tail = newNode;
+       }
+       size++;
        return true;
     }
 
     @Override
+    /*
+    TO DO
+     */
     public boolean remove(Object o) {
+        if(o == null) {
+            for (Node i = head; i != null; i = i.next) {
+                if(i.data == null){
+                    Node previous = i.previous;
+                    Node next = i.next;
+
+                }
+            }
+        }else {
+            for (Node i = head ; i != null ; i = i.next) {
+                if(i.data.equals(o)){
+
+                }
+            }
+        }
         return false;
     }
 
@@ -91,19 +127,53 @@ public class MyLinkedList implements List<Integer> {
 
     @Override
     public void clear() {
+        for (Node i = head; i != null; i = i.next) {
+            i = null;
+        }
+        size = 0;
 
     }
 
     @Override
     public Integer get(int index) {
+        int y = 0;
+        Integer value = 0;
+
+        if(index < 0 || index >= size){
+            return null;
+        }
         for (Node x = head; x != null; x = x.next) {
 
+            if(y == index){
+                return x.data;
+            }
+
+            y++;
+
         }
+        return null;
+
     }
 
     @Override
     public Integer set(int index, Integer element) {
-        return 0;
+        if(index < 0 || index >= size){
+            return -1;
+        }
+
+        int y = 0;
+
+        for(Node i = head; i != null ; i = i.next) {
+            if(y == index){
+                Integer v = i.data;
+                i.data = element;
+                return v;
+            }
+            y++;
+        }
+        return null;
+
+
     }
 
     @Override
@@ -113,12 +183,50 @@ public class MyLinkedList implements List<Integer> {
 
     @Override
     public Integer remove(int index) {
-        return 0;
+        int x = 0;
+
+        if(index < 0 || index >= size){
+            return -1;
+        }
+        for (Node i = head; i != null; i = i.next) {
+
+            if(i.previous == null && x == index){
+                head = i.next;
+            }
+
+            if(i.next == null && x == index){
+                i.previous.next = null;
+            }
+
+            if(x == index){
+                Integer v = i.data;
+                i.previous.next = i.next;
+                i = null;
+
+                return v;
+            }
+        }
+        return null;
     }
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        int y = 0;
+        int index = 0;
+        if(o == null) {
+            for (Node i = head; i != null; i = i.next) {
+                if(i.data == null){
+                    return -1;
+                }
+            }
+        }
+        for (Node i = head; i != null; i = i.next) {
+            if(o.equals(i.data)){
+                index = y;
+            }
+            y++;
+        }
+        return index;
     }
 
     @Override
