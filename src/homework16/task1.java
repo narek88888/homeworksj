@@ -11,21 +11,19 @@ public class task1 {
 
             if(n == 1){
             nums[0] = 0;
-
             return nums;
+
             }
-            else if(n == 2) {
+            else if(n >= 2) {
                 nums[0] = 0;
                 nums[1] = 1;
-                return nums;
-            }else {
-                nums[0] = 0;
-                nums[1] = 1;
-                nums[2] = 1;
+
             }
 
-        for (int i = 1; i < n - 2; i++) {
-            nums[2 + i] = nums[i] + nums[i + 1];
+
+
+        for (int i = 0; i < n - 2; i++) {
+            nums[i + 2] = nums[i] + nums[i + 1];
 
         }
         return nums;
@@ -33,7 +31,7 @@ public class task1 {
 
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(findFirstNFibonacciNumbers(10)));
+        System.out.println(Arrays.toString(findFirstNFibonacciNumbers(120)));
     }
 
 }
