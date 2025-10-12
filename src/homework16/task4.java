@@ -8,12 +8,12 @@ import java.lang.reflect.Array;
 public class task4 {
 
     public static void arrayChecker(String[] x, String y) {
-        String collection = "";
+        StringBuilder collection = new StringBuilder();
 
         for (String v : x) {
-            collection += v;
+            collection.append(v);
         }
-        if(collection.equals(y)){
+        if(collection.toString().equals(y)){
             System.out.println("it is possible to create a string from that array");
         }else {
             System.out.println("it isn't possible to create a string from that array");

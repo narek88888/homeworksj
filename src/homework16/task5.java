@@ -10,22 +10,55 @@ public class task5 {
             return null;
         }
 
-        int count = 0;
+        int count1 = 0;
 
         for (int i = 0; i < x.length(); i++) {
             char y = x.charAt(i);
 
             if (y == '(') {
-                count++;
+                count1++;
 
             } else if (y == ')') {
-                count--;
+                count1--;
             }
-            if (count < 0) {
+            if (count1 < 0) {
                 return "it is not balanced open the parenthesis";
             }
         }
-        if (count > 0) {
+
+        int count2 = 0;
+        for (int j = 0; j < x.length(); j++) {
+            char y = x.charAt(j);
+
+            if (y == '[') {
+                count2++;
+
+            } else if (y == ']') {
+                count2--;
+            }
+            if (count2 < 0) {
+                return "it is not balanced open the parenthesis";
+            }
+        }
+        if (count2 > 0) {
+            return "it is not balanced close the parenthesis";
+        }
+
+        int count3 = 0;
+        for (int j = 0; j < x.length(); j++) {
+            char y = x.charAt(j);
+
+            if (y == '{') {
+                count3++;
+
+            } else if (y == '}') {
+                count3--;
+            }
+            if (count3 < 0) {
+                return "it is not balanced open the parenthesis";
+            }
+        }
+        if (count3 > 0) {
             return "it is not balanced close the parenthesis";
         }
 
@@ -39,5 +72,12 @@ public class task5 {
         System.out.println(parenthesesChecker(")"));
         System.out.println(parenthesesChecker("()("));
         System.out.println(parenthesesChecker("())"));
+        System.out.println(parenthesesChecker("{}"));
+        System.out.println(parenthesesChecker("}"));
+        System.out.println(parenthesesChecker("{"));
+        System.out.println(parenthesesChecker("["));
+        System.out.println(parenthesesChecker("]"));
+        System.out.println(parenthesesChecker("][]"));
+
     }
 }

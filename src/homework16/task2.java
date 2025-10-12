@@ -19,6 +19,8 @@ public class task2 {
 
         for (int i = 0; i < elements.length; i++) {
             for (int j = 0; j < elements.length - i - 1; j++) {
+                // ԵԹԵ ՍՏԵՂ -1 ՉԳՐԵԻՆՔ INDEXOUT ԿՏԱՐ ՈՐՏև ԼԻՆԵԼՈՒ Է ԱՌԱՋԻՆԻ ԺԱՄԱՆԱԿ lenght - 0 հետո +1-ով
+                // մի դուրս էինք գալու զանգվածից
                 if (elements[j] > elements[j + 1]) {
                     int saver = elements[j];
                     elements[j] = elements[j + 1];
