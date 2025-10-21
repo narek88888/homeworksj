@@ -26,14 +26,8 @@ public class task13 {
         y.add(2);
         y.add(2);
         y.add(1);
-        y.add(1);
-        LinkedList<Integer> y1 = new LinkedList<>();
-        y1.offer(5);
-        y1.offer(6);
-        y1.offer(7);
-        y1.offer(7);
-        y1.add(1);
-        y1.add(10);
-        System.out.println(y1);
+
+
+        System.out.println(checkPolindrome(y));
     }
 }
