@@ -41,15 +41,24 @@ public class Sprint implements Run, Jog {
 
  */
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
 
-class Math {
-    public final double secret = 2;
-} class ComplexMath extends Math {
-    public final double secret = 4;
-} public class InfiniteMath extends ComplexMath {
-    public final double secret = 8;
-    public static void main(String[] numbers) {
-        Math math = new InfiniteMath();
-        System.out.print(math.secret);
+public class Main {
+    public static <T>  void test(T t) {
+        System.out.println("Preparing " + t);
+    }
+
+    public static void main(String[] args) {
+
+        test("Hello World"); // Preparing Hello World
+
+        test(7); // Preparing 7
     }
 }
+
+
+
+
+
